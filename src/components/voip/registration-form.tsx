@@ -296,12 +296,14 @@ export function RegistrationForm({ onSubmit }: RegistrationFormProps) {
             <CardFooter className="flex justify-end gap-4 px-0">
               <Button
                 type="button"
-                variant="outline"
+                variant="glass"
                 onClick={() => form.reset()}
               >
                 重置
               </Button>
-              <Button type="submit">提交</Button>
+              <Button type="submit" variant="glass">
+                提交
+              </Button>
             </CardFooter>
           </form>
         </Form>
