@@ -5,7 +5,8 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/w/',
+  // GitHub Pages 项目站: https://<user>.github.io/watermark/
+  base: '/watermark/',
   plugins: [
     react({
       babel: {

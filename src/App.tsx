@@ -76,22 +76,22 @@ const TabLayout = () => {
 const routes = [
   {
     path: "/",
-    element: <Navigate to="/w/watermark/" replace />,
+    element: <Navigate to="/watermark/watermark/" replace />,
   },
   {
-    path: "/w/",
-    element: <Navigate to="/w/watermark/" replace />,
+    path: "/watermark/",
+    element: <Navigate to="/watermark/watermark/" replace />,
   },
   {
-    path: "/w/watermark/",
+    path: "/watermark/watermark/",
     element: <TabLayout />,
   },
   {
-    path: "/w/register",
+    path: "/watermark/register",
     element: <TabLayout />,
   },
   {
-    path: "/w/api",
+    path: "/watermark/api",
     element: <TabLayout />,
   },
 ]

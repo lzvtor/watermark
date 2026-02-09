@@ -5,9 +5,9 @@ import { useIsMobile } from "@/hooks/use-mobile"
 
 // Tab 路由配置
 export const tabRoutes = [
-  { path: "/w/watermark/", label: "水印", value: "watermark" },
-  { path: "/w/register", label: "注册", value: "register" },
-  { path: "/w/api", label: "API 数据", value: "api" },
+  { path: "/watermark/watermark/", label: "水印", value: "watermark" },
+  { path: "/watermark/register", label: "注册", value: "register" },
+  { path: "/watermark/api", label: "API 数据", value: "api" },
 ]
 
 interface TabNavigationProps {
