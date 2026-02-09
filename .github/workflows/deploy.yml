@@ -1,0 +1,46 @@
+name: Deploy watermark to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    steps:
+      # 1️⃣ 拉代码
+      - uses: actions/checkout@v4
+
+      # 2️⃣ 安装 pnpm CLI
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      # 3️⃣ 安装 Node.js 并配置 pnpm 缓存
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      # 4️⃣ 安装依赖（缓存生效）
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # 5️⃣ 构建
+      - name: Build
+        run: pnpm build
+
+      # 6️⃣ 上传 Pages artifact
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      # 7️⃣ 部署到 GitHub Pages
+      - uses: actions/deploy-pages@v4
