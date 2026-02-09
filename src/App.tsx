@@ -1,4 +1,4 @@
-import { useRoutes } from "react-router-dom"
+import { useRoutes, Navigate } from "react-router-dom"
 import { Toaster } from "@/components/ui"
 import { RegistrationForm } from "@/components/voip"
 
@@ -11,6 +11,10 @@ const FormLayout = () => (
 const routes = [
   {
     path: "/",
+    element: <Navigate to="/watermark/" replace />,
+  },
+  {
+    path: "/watermark/",
     element: <FormLayout />,
   },
   {
