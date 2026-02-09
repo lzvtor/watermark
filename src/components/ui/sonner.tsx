@@ -10,7 +10,7 @@ import {
 import { Toaster as Sonner, type ToasterProps } from "sonner"
 
 const Toaster = ({ ...props }: ToasterProps) => {
-  // 检测是否处于暗色模式
+  // 使用纯 CSS 检测暗色模式：检查是否有 dark 类或系统偏好
   const isDark = typeof window !== "undefined" && 
     (document.documentElement.classList.contains("dark") ||
      window.matchMedia("(prefers-color-scheme: dark)").matches)
